@@ -44,12 +44,12 @@ class HomeFragment : Fragment(), HomeContract.View {
 
         initRecyclerView()
 
-        circularProgress.setProgressWithAnimation(
-            70f,
-            1000,
-            AccelerateDecelerateInterpolator(),
-            500
-        )
+//        circularProgress.setProgressWithAnimation(
+//            70f,
+//            1000,
+//            AccelerateDecelerateInterpolator(),
+//            500
+//        )
         Picasso
             .get()
             .load("https://media.licdn.com/dms/image/C4E03AQFcCuDIJl0mKg/profile-displayphoto-shrink_200_200/0?e=1583366400&v=beta&t=ymt3xgMe5bKS-2knNDL9mQYFksP9ZHne5ugIqEyRjZs")
@@ -63,7 +63,7 @@ class HomeFragment : Fragment(), HomeContract.View {
 
         homePresenter!!.getPercentageLiveData()
             .observe(viewLifecycleOwner, androidx.lifecycle.Observer {
-                percentageText.text = it
+                //percentageText.text = it
             })
     }
 
@@ -75,11 +75,11 @@ class HomeFragment : Fragment(), HomeContract.View {
     }
 
     override fun showLoading() {
-        homeProgress.visibility = View.VISIBLE
+        homeProgress?.visibility = View.VISIBLE
     }
 
     override fun hideLoading() {
-        homeProgress.visibility = View.GONE
+        homeProgress?.visibility = View.GONE
     }
 
     override fun showFavoriteTransfers(favoriteTransfer: List<FavoriteTransfer>) {
